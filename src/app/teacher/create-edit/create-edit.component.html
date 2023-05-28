@@ -1,0 +1,17 @@
+<h1 *ngIf="!this.idEdit">Create</h1>
+<h1 *ngIf="this.idEdit">Edit</h1>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>First Name:</label>
+    <input type="text"
+           [(ngModel)]="user.firstName" required>
+  </p>
+  <p>
+    <label>Password:</label>
+    <input type="password"
+           [(ngModel)]="user.password" required>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </p>
+</form>
